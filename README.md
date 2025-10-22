@@ -1,6 +1,5 @@
 
-# Create README.md file content
-readme_content = '''# Simple Chatbot with LangGraph and Gemini 2.0 Flash
+## Simple Chatbot with LangGraph and Gemini 2.0 Flash
 
 A lightweight conversational AI chatbot built using LangGraph framework and Google's Gemini 2.0 Flash model. This implementation demonstrates stateful message management and clean integration with Google's generative AI capabilities.
 
