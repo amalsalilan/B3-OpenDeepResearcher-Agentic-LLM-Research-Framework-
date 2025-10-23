@@ -27,14 +27,16 @@ The chatbot accepts a user message, processes it through Gemini, and displays th
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the Repository
-```bash
 git clone <your-repo-link>
 cd Simple-LangGraph-Chatbot
+
 ## **2️⃣ Create and Activate a Virtual Environment**
 python -m venv venv
 venv\Scripts\activate
+
 ## **3️⃣ Install Dependencies**
 pip install langgraph langchain-google-genai python-dotenv
+
 ## 4️⃣** Add Your Google API Key**
 GOOGLE_API_KEY=your_google_api_key_here
 
