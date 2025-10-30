@@ -5,6 +5,7 @@ from typing import TypedDict, Annotated, Sequence, Optional, Literal, Dict, Any,
 import operator
 import uuid
 import json 
+import re
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages, MessagesState
 from langgraph.checkpoint.memory import MemorySaver
@@ -12,7 +13,6 @@ from langchain_core.messages import  HumanMessage, AIMessage, BaseMessage, get_b
 
 from pydantic import BaseModel, Field
 from langchain_google_genai import ChatGoogleGenerativeAI  
-
 
 dotenv.load_dotenv()
 if "GOOGLE_API_KEY" not in os.environ:
@@ -86,9 +86,15 @@ def clarify_with_user(state: AgentState) -> Dict[str, Any]:
     try:
         ai_response = model.invoke([HumanMessage(content=prompt)])
         response_text = ai_response.content
-        print('\n',response_text,'\n')
-        response_data = json.loads(response_text)
-        print(f"Analysis (raw dict): {response_data}")
+        # print('\n',response_text,'\n')    
+        match = re.search(r"\{.*\}", response_text, re.DOTALL)
+        if match:
+            json_string = match.group(0)
+            response_data = json.loads(json_string)
+        else:
+            raise ValueError("No JSON block found in LLM response.")
+        
+        # print(f"\nAnalysis (raw dict): {response_data}\n")
 
     except Exception as e:
         print(f"Error parsing LLM output: {e}")
