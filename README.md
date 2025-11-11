@@ -4,11 +4,11 @@ Follow these steps to get the researcher running with the default configuration.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/amalsalilan/Infosys-Springboard-Virtual-Internship-6.0-Open-Deep-Researcher-batch-2.git
+   git clone https://github.com/amalsalilan/B3-OpenDeepResearcher-Agentic-LLM-Research-Framework-.git
    ```
 2. Change into the project directory:
    ```bash
-   cd Infosys-Springboard-Virtual-Internship-6.0-Open-Deep-Researcher-batch-2
+   cd B3-OpenDeepResearcher-Agentic-LLM-Research-Framework
    ```
 3. Install Python dependencies with `uv` (installation guide: https://docs.astral.sh/uv/getting-started/installation/):
    ```bash
