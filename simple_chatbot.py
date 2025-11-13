@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, AIMessage
 import os
 # Set your Google API key directly
-GOOGLE_API_KEY = "AIzaSyCTo80o8jZG3ej4FnTyNxMGKaVk6Hby1Tk"  # Replace with your real key
+GOOGLE_API_KEY = "Your Google api key"  # Replace with your real key
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # Define the chatbot state
 class ChatState(TypedDict):
